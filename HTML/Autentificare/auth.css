@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px; 
+    position: relative;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.home-button {
+    position: absolute;
+    right: 20px;
+    top: calc(100% - 70px);  
+    background-color: #F2C2EB;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.home-button:hover {
+    background-color: #D99BC8;
+    color: black;
+}
+
+.tabel {
+    width: 70%;
+    margin: 50px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+td {
+    padding: 20px;
+}
+
+.auth {
+    text-align: left;
+    padding: 10px 20px;
+    color: black;
+}
+
+.center {
+    text-align: center;
+}
+
+.auth-button {
+    background-color: #F2C2EB;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.auth-button:hover {
+    background-color: #D99BC8;
+    color: black;
+}
+
+.error {
+    color: red;
+}

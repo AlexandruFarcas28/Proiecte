@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="auth.css">
+    <script src="auth.js" defer></script>
+    <title>Autentificare</title>
+</head>
+<body>
+
+<header class="header">
+    <h1>Autentificare</h1>
+    <a href="../Main/home.html" class="home-button">Acasă</a>
+</header>
+<form id="authForm" method="post" action="auth.php">
+    <table class="tabel" cellspacing="0" cellpadding="0">
+        <tr>
+            <td class="auth">Utilizator:</td>
+            <td class="auth"><input type="text" id="nume_utiz" name="nume_utiz"></td>
+        </tr>
+        <tr>
+            <td class="auth">Parola:</td>
+            <td class="auth"><input type="password" id="parola" name="parola"></td>
+        </tr>
+        <tr>
+            <td colspan="2" class="auth center">
+                <button type="submit" name="submit" class="auth-button" >Autentificare</button>
+            </td>
+        </tr>
+    </table>
+</form>
+<div class="signup">
+    <p><center>Nu ai încă un cont? <a href="../Creare cont/index.html" class="signup-link">Creează cont</a><center></p>
+</div>
+</body>
+</html>
