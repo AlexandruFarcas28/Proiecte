@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="evenimente.css">
+    <script src="evenimente.js" defer></script>
+    <title>Program Evenimente</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Program Evenimente</h1>
+        <a href="../Main/home.html" class="home-button">Acasă</a>
+    </div>
+    <div class="events-container">
+        <div class="events-wrapper">
+            <div class="event" data-event="Stand-up">
+                <div class="event-info">
+                    <span class="event-date">1 iunie 2024</span>
+                    <h2 class="event-title">Stand-up</h2>
+                    <img src="asf.jpg" alt="Concert live" class="event-image">
+                    <span class="event-price">Preț: 100 RON</span>
+                    <button class="buy-button" onclick="openTicketMenu('Stand-up')">Cumpărare</button>
+                </div>
+            </div>
+            <div class="event" data-event="Concert live">
+                <div class="event-info">
+                    <span class="event-date">2 iunie 2024</span>
+                    <h2 class="event-title">Concert live</h2>
+                    <img src="ramm.jpg" alt="Concert live" class="event-image">
+                    <span class="event-price">Preț: 150 RON</span>
+                    <button class="buy-button" onclick="openTicketMenu('Concert live')">Cumpărare</button>
+                </div>
+            </div>
+            <div class="event" data-event="Opera">
+                <div class="event-info">
+                    <span class="event-date">7 iunie 2024</span>
+                    <h2 class="event-title">Opera</h2>
+                    <img src="notte.jpg" alt="Concert live" class="event-image">
+                    <span class="event-price">Preț: 120 RON</span>
+                    <button class="buy-button" onclick="openTicketMenu('Opera')">Cumpărare</button>
+                </div>
+            </div>
+            <div class="event" data-event="Concert live">
+                <div class="event-info">
+                    <span class="event-date">8 iunie 2024</span>
+                    <h2 class="event-title">Concert live</h2>
+                    <img src="idk.jpg" alt="Concert live" class="event-image">
+                    <span class="event-price">Preț: 100 RON</span>
+                    <button class="buy-button" onclick="openTicketMenu('Concert live')">Cumpărare</button>
+                </div>
+            </div>
+            <div class="event" data-event="Stand-up">
+                <div class="event-info">
+                    <span class="event-date">16 iunie 2024</span>
+                    <h2 class="event-title">Stand-up</h2>
+                    <img src="prieteni.jpg" alt="Concert live" class="event-image">
+                    <span class="event-price">Preț: 130 RON</span>
+                    <button class="buy-button" onclick="openTicketMenu('Stand-up')">Cumpărare</button>
+                </div>
+            </div>
+            <div class="event" data-event="Stand-up">
+                <div class="event-info">
+                    <span class="event-date">18 iunie 2024</span>
+                    <h2 class="event-title">Stand-up</h2>
+                    <img src="Scandal.jpg" alt="Concert live" class="event-image">
+                    <span class="event-price">Preț: 140 RON</span>
+                    <button class="buy-button" onclick="openTicketMenu('Stand-up')">Cumpărare</button>
+                </div>
+            </div>
+            <div class="event" data-event="Concert live">
+                <div class="event-info">
+                    <span class="event-date">21 iunie 2024</span>
+                    <h2 class="event-title">Concert live</h2>
+                    <img src="Cargo.jpg" alt="Concert live" class="event-image">
+                    <span class="event-price">Preț: 135 RON</span>
+                    <button class="buy-button" onclick="openTicketMenu('Concert live')">Cumpărare</button>
+                </div>
+            </div>
+            <div class="event" data-event="Concert live">
+                <div class="event-info">
+                    <span class="event-date">23 iunie 2024</span>
+                    <h2 class="event-title">Concert live</h2>
+                    <img src="Motans.jpg" alt="Concert live" class="event-image">
+                    <span class="event-price">Preț: 240 RON</span>
+                    <button class="buy-button" onclick="openTicketMenu('Concert live')">Cumpărare</button>
+                </div>
+            </div>
+            <div class="event" data-event="Teatru">
+                <div class="event-info">
+                    <span class="event-date">27 iunie 2024</span>
+                    <h2 class="event-title">Teatru</h2>
+                    <img src="Teatru.jpg" alt="Concert live" class="event-image">
+                    <span class="event-price">Preț: 50 RON</span>
+                    <button class="buy-button" onclick="openTicketMenu('Teatru')">Cumpărare</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <div class="ticket-menu" id="ticketMenu">
+        <form onsubmit="buyTickets(event)">
+            <label for="ticketCount">Număr de bilete:</label>
+            <input type="number" id="ticketCount" name="ticket_count" min="1" value="1">
+            <input type="hidden" id="eventName" name="event_name">
+            <label for="paymentMethod">Metoda de plată:</label>
+            <select id="paymentMethod" name="payment_method" onchange="togglePaymentMethod()">
+                <option value="card">Plata cu cardul</option>
+                <option value="pickup">Ridicare la eveniment</option>
+            </select>
+            <div id="cardPaymentFields">
+                <label for="cardNumber">Număr card:</label>
+                <input type="text" id="cardNumber" name="card_number" pattern="\d{16}" placeholder="1234 5678 9012 3456">
+            </div>
+            <button type="submit">Cumpără</button>
+            <button type="button" onclick="closeTicketMenu()">Anulează</button>
+        </form>
+    </div>
+</body>
+</html>
