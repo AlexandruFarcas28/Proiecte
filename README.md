@@ -13,7 +13,7 @@ Am ales să implementez același proiect – un sistem de magazin – în mai mu
 ### 🗃️ Magazin – Bază de date (SQLite)
 Proiectul este axat în principal pe partea de **client**:
 - Structură detaliată cu informații despre clienți, comenzi, produse și stocuri
-- Interogări avansate: JOIN, subinterogări, agregări, trigger-e
+- Interogări avansate: JOIN, subinterogări, agregări
 - Scopul principal: explorarea modelării relaționale și a interogării eficiente a datelor
 
 ### 🧾 Magazin – C++
@@ -28,6 +28,16 @@ Versiune orientată pe obiect, cu interfață grafică:
 - Interfață intuitivă (ex: Swing/JavaFX) și funcționalități CRUD
 - **Folosește o altă bază de date SQLite** decât cea din proiectul de baze de date, cu structură și date proprii
 - Scop: înțelegerea principiilor OOP și a integrării Java cu o bază de date locală
+
+---
+
+## 🌐 Proiect web – Rezervare bilete
+
+Un sistem complet de rezervare bilete realizat folosind:
+- `HTML`, `CSS`, `JavaScript` pentru interfață
+- `PHP` pentru partea de backend și comunicarea cu baza de date
+- Funcționalități precum autentificare, afișare bilete disponibile și rezervare finală
+- Proiect gândit pentru a simula o aplicație web reală, full-stack
 
 ---
 
@@ -55,10 +65,10 @@ Versiune orientată pe obiect, cu interfață grafică:
 
 ## 🛠️ Tehnologii utilizate
 
-- Limbaje: `SQL`, `C++`, `Java`, `Bash`, `Python`
+- Limbaje: `SQL`, `C++`, `Java`, `Bash`, `Python`, `HTML`, `CSS`, `JavaScript`, `PHP`
 - Baze de date: `SQLite` (fișiere separate pentru proiecte diferite)
 - Sisteme: `Linux`, `Windows`
-- Tool-uri: `SQLiteStudio`, `Code::Blocks`, `IntelliJ IDEA`, `VS Code`, `Wireshark`, `Ghidra`, `pwntools`, `IDA`
+- Tool-uri: `SQLiteStudio`, `Code::Blocks`, `Java Eclipse`, `VS Code`, `Wireshark`, `Ghidra`, `pwntools`, `IDA`
 
 ---
 
