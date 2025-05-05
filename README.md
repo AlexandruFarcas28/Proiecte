@@ -71,4 +71,3 @@ Versiune orientată pe obiect, cu interfață grafică:
 
 ---
 
-*Profilul meu GitHub reflectă evoluția și curiozitatea mea continuă de a învăța lucruri noi, atât individual cât și în echipă.*
