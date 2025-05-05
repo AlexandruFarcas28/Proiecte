@@ -64,9 +64,10 @@ Versiune orientată pe obiect, cu interfață grafică:
 
 ## 📫 Contact
 
-- GitHub: [github.com/username](https://github.com/username)
-- Email: your.email@example.com
-- LinkedIn: [linkedin.com/in/username](https://linkedin.com/in/username)
+- GitHub: [github.com/AlexandruFarcas28](https://github.com/AlexandruFarcas28)
+- 📧 Email: farcasalex78@yahoo.com  
+          alexandru.farcas04@e-uvt.ro
+- 💼 LinkedIn: [linkedin.com/in/alexandru-farcas-053882334](https://www.linkedin.com/in/alexandru-farcas-053882334/)
 
 ---
 
