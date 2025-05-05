@@ -1,4 +1,4 @@
-# 👋 Salut! Eu sunt [Numele Tău]
+# 👋 Salut! Eu sunt Farcaș Alexandru
 
 Sunt pasionat de dezvoltarea de aplicații, baze de date, securitate cibernetică și rețelistică. Îmi place să înțeleg diferențele dintre limbajele de programare și să explorez arhitectura sistemelor din perspective multiple — de la high-level la low-level.
 
