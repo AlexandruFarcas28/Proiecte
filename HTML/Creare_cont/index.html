@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="creare.css">
+    <script src="creare.js" defer></script>
+    <title>Creare cont</title>
+</head>
+<body>
+    <header class="header">
+        <h1>Creare cont</h1>
+        <a href="../Main/home.html" class="home-button">Acasă</a>
+    </header>
+    <form action="creare.php" method="POST" onsubmit="return validateForm()">
+        <table class="tabel" cellspacing="0" cellpadding="0">
+            <tr>
+                <td class="auth">Nume:</td>
+                <td class="auth"><input type="text" id="nume" name="nume" required></td>
+            </tr>
+            <tr>
+                <td class="auth">Prenume:</td>
+                <td class="auth"><input type="text" id="prenume" name="prenume" required></td>
+            </tr>
+            <tr>
+                <td class="auth">Nume utilizator:</td>
+                <td class="auth"><input type="text" id="nume_utilizator" name="nume_utiz" required></td>
+            </tr>
+            <tr>
+                <td class="auth">Adresă de email:</td>
+                <td class="auth"><input type="email" id="email" name="email" required></td>
+            </tr>
+            <tr>
+                <td class="auth">Adresă:</td>
+                <td class="auth"><input type="text" id="adresa" name="adresa" required></td>
+            </tr>
+            <tr>
+                <td class="auth">Data nașterii:</td>
+                <td class="auth"><input type="date" id="data_nasterii" name="data_nasterii" required></td>
+            </tr>
+            <tr>
+                <td class="auth">Student:</td>
+                <td class="auth">
+                    <input type="checkbox" id="student" onchange="showStudentInfo()"> Da
+                    <div id="student-info" style="display: none;">
+                        <div>
+                            <label for="cnp">CNP:</label>
+                            <input type="text" id="cnp" name="cnp">
+                        </div>
+                        <div>
+                            <label for="leg">Număr legitimatie:</label>
+                            <input type="text" id="leg" name="leg">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="auth">Parolă:</td>
+                <td class="auth"><input type="password" id="parola" name="parola" required></td>
+            </tr>
+            <tr>
+				<td class="auth">Confirmare parolă:</td>
+				<td class="auth"><input type="password" id="confirm_password" name="confirm_password" required></td>
+			</tr>
+            <tr>
+                <td colspan="2" class="auth center">
+                    <button type="submit" class="auth-button">Creează cont</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div class="login">
+        <p><center>Ai deja un cont? <a href="../Autentificare/index.html" class="login-link">Autentificare</a></center></p>
+    </div>
+</body>
+</html>
