@@ -1,12 +1,12 @@
-# 👋 Salut! Eu sunt Farcaș Alexandru
+# 👋 Salut! Eu sunt [Numele Tău]
 
-Sunt pasionat de dezvoltarea de aplicații, securitate cibernetică și rețelistică. Îmi place să înțeleg diferențele dintre limbajele de programare și să explorez arhitectura sistemelor din perspective multiple — de la high-level la low-level.
+Sunt pasionat de dezvoltarea de aplicații, baze de date, securitate cibernetică și rețelistică. Îmi place să înțeleg diferențele dintre limbajele de programare și să explorez arhitectura sistemelor din perspective multiple — de la high-level la low-level.
 
 Pe acest profil vei găsi proiecte tematice, comparative și colaborative, toate reflectând dorința mea de a învăța prin construcție practică.
 
 ---
 
-## 🛍️ Proiecte individuale tip „Magazin”
+## 🛍️ Proiecte tip „Magazin”
 
 Am ales să implementez același proiect – un sistem de magazin – în mai multe tehnologii pentru a înțelege diferențele de abordare, modelare și implementare între limbaje și paradigme.
 
@@ -31,7 +31,12 @@ Versiune orientată pe obiect, cu interfață grafică:
 
 ---
 
-## 🤝 Proiecte în echipă 
+## 🤝 Proiecte în echipă (Linux)
+
+### 🛡️ Meniu de Backup Avansat (Linux)
+- Realizat în echipă, script complex pentru backup automatizat
+- Include opțiuni pentru backup incremental, diferențial și restaurare
+- Funcționează pe Linux folosind comenzi bash și dialoguri interactive
 
 ### 💻 Shell personalizat (Linux)
 - Implementare de la zero a unui shell asemănător cu Bash
@@ -53,15 +58,16 @@ Versiune orientată pe obiect, cu interfață grafică:
 - Limbaje: `SQL`, `C++`, `Java`, `Bash`, `Python`
 - Baze de date: `SQLite` (fișiere separate pentru proiecte diferite)
 - Sisteme: `Linux`, `Windows`
-- Tool-uri: `SQLiteStudio`, `Code::Blocks`, `Java Eclipse`, `VS Code`, `Wireshark`, `Ghidra`, `pwntools`, `IDA`
+- Tool-uri: `SQLiteStudio`, `Code::Blocks`, `IntelliJ IDEA`, `VS Code`, `Wireshark`, `Ghidra`, `pwntools`, `IDA`
 
 ---
 
 ## 📫 Contact
 
-- GitHub: [github.com/AlexandruFarcas28](https://github.com/AlexandruFarcas28)
-- 📧 Email: farcasalex78@yahoo.com  
-          alexandru.farcas04@e-uvt.ro
-- 💼 LinkedIn: [linkedin.com/in/alexandru-farcas-053882334](https://www.linkedin.com/in/alexandru-farcas-053882334/)
+- GitHub: [github.com/username](https://github.com/username)
+- Email: your.email@example.com
+- LinkedIn: [linkedin.com/in/username](https://linkedin.com/in/username)
 
 ---
+
+*Profilul meu GitHub reflectă evoluția și curiozitatea mea continuă de a învăța lucruri noi, atât individual cât și în echipă.*
