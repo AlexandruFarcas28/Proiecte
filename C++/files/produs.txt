@@ -1,0 +1,26 @@
+#NUMAR DE ELEMENTE
+3
+
+#NUME PRODUS
+#COST numar de tip double
+#CANTITATE numar de tip natural
+#TARA DE PROVENIENTA
+#INFORMATI DESPRE PRODUS
+
+cartof
+13.000000
+293
+Italia
+leguma radacinoasa,pret/kg
+
+Sprite
+2.500000
+0
+Statele unite ale Americi
+soda,0,5l
+
+mar
+14.000000
+132
+Romania
+fruct,pret/kg
