@@ -25,7 +25,7 @@ Aplicație de tip consolă:
 ### ☕ Magazin – Java
 Versiune orientată pe obiect, cu interfață grafică:
 - Clase bine structurate pentru produse, clienți, comenzi
-- Interfață intuitivă (ex: Swing/JavaFX) și funcționalități CRUD
+- Interfață intuitivă JavaFX și funcționalități CRUD
 - **Folosește o altă bază de date SQLite** decât cea din proiectul de baze de date, cu structură și date proprii
 - Scop: înțelegerea principiilor OOP și a integrării Java cu o bază de date locală
 
