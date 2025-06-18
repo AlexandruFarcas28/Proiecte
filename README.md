@@ -1,83 +1,101 @@
-# 👋 Salut! Eu sunt Farcaș Alexandru
+# 👋 Hello! I'm Farcaș Alexandru
 
-Sunt pasionat de dezvoltarea de aplicații, baze de date, securitate cibernetică și rețelistică. Îmi place să înțeleg diferențele dintre limbajele de programare și să explorez arhitectura sistemelor din perspective multiple — de la high-level la low-level.
+I'm passionate about application development, databases, cybersecurity, and networking. I enjoy understanding the differences between programming languages and exploring system architecture from multiple angles — from high-level to low-level.
 
-Pe acest profil vei găsi proiecte tematice, comparative și colaborative, toate reflectând dorința mea de a învăța prin construcție practică.
-
----
-
-## 🛍️ Proiecte tip „Magazin”
-
-Am ales să implementez același proiect – un sistem de magazin – în mai multe tehnologii pentru a înțelege diferențele de abordare, modelare și implementare între limbaje și paradigme.
-
-### 🗃️ Magazin – Bază de date (SQLite)
-Proiectul este axat în principal pe partea de **client**:
-- Structură detaliată cu informații despre clienți, comenzi, produse și stocuri
-- Interogări avansate: JOIN, subinterogări, agregări
-- Scopul principal: explorarea modelării relaționale și a interogării eficiente a datelor
-
-### 🧾 Magazin – C++
-Aplicație de tip consolă:
-- Gestionare produse, clienți, coșuri de cumpărături
-- Implementare fără STL, folosind structuri de date proprii
-- Obiectiv: înțelegerea manipulării memoriei și a programării procedurale în C++
-
-### ☕ Magazin – Java
-Versiune orientată pe obiect, cu interfață grafică:
-- Clase bine structurate pentru produse, clienți, comenzi
-- Interfață intuitivă JavaFX și funcționalități CRUD
-- **Folosește o altă bază de date SQLite** decât cea din proiectul de baze de date, cu structură și date proprii
-- Scop: înțelegerea principiilor OOP și a integrării Java cu o bază de date locală
+On this profile, you'll find thematic, comparative, and collaborative projects, all reflecting my drive to learn through hands-on building.
 
 ---
 
-## 🌐 Proiect web – Rezervare bilete
+## 🛍️ “Store”-Type Projects
 
-Un sistem complet de rezervare bilete realizat folosind:
-- `HTML`, `CSS`, `JavaScript` pentru interfață
-- `PHP` pentru partea de backend și comunicarea cu baza de date
-- Funcționalități precum autentificare, afișare bilete disponibile și rezervare finală
-- Proiect gândit pentru a simula o aplicație web reală, full-stack
+I chose to implement the same project — a store system — using various technologies to understand the differences in approach, modeling, and implementation between languages and paradigms.
 
----
+### 🗃️ Store – Database (SQLite)
+Focused mainly on the **client-side**:
+- Detailed structure with information about clients, orders, products, and stock
+- Advanced queries: JOINs, subqueries, aggregations
+- Main goal: exploring relational modeling and efficient data querying
 
-## 🤝 Proiecte în echipă (Linux)
+### 🧾 Store – C++
+Console-based application:
+- Management of products, clients, and shopping carts
+- Implementation without STL, using custom data structures
+- Objective: understanding memory handling and procedural programming in C++
 
-### 🛡️ Meniu de Backup Avansat (Linux)
-- Realizat în echipă, script complex pentru backup automatizat
-- Include opțiuni pentru backup incremental, diferențial și restaurare
-- Funcționează pe Linux folosind comenzi bash și dialoguri interactive
-
-### 💻 Shell personalizat (Linux)
-- Implementare de la zero a unui shell asemănător cu Bash
-- Suport pentru comenzi interne, execuție externă, redirecționare și pipe-uri
-- Scop: înțelegerea sistemului de procese, exec și parsing în Linux
-
----
-
-## 🧠 Interese și explorări
-
-- 🛡️ **Cybersecurity** – exploatare binară, reverse engineering, PWN
-- 🌐 **Rețelistică** – îmi place domeniul în general: concepte precum TCP/IP, ARP, OSI, routare și comutare mă atrag și le studiez cu interes
-- 🔍 **Low-level & Debugging** – ELF, GDB, strace, wireshark, packet analysis
+### ☕ Store – Java
+Object-oriented version with graphical interface:
+- Well-structured classes for products, clients, and orders
+- Intuitive JavaFX interface and full CRUD functionality
+- **Uses a separate SQLite database** from the one in the database project, with its own structure and data
+- Goal: learning OOP principles and Java integration with local databases
 
 ---
 
-## 🛠️ Tehnologii utilizate
+## 🌐 Web Project – Ticket Reservation
 
-- Limbaje: `SQL`, `C++`, `Java`, `Bash`, `Python`, `HTML`, `CSS`, `JavaScript`, `PHP`
-- Baze de date: `SQLite` (fișiere separate pentru proiecte diferite)
-- Sisteme: `Linux`, `Windows`
-- Tool-uri: `SQLiteStudio`, `Code::Blocks`, `Java Eclipse`, `VS Code`, `Wireshark`, `Ghidra`, `pwntools`, `IDA`
+A full ticket reservation system built using:
+- `HTML`, `CSS`, `JavaScript` for the frontend
+- `PHP` for backend logic and database communication
+- Features like login, ticket display, and booking functionality
+- Designed to simulate a real-world, full-stack web application
+
+---
+
+## 🤖 Autonomous Robot with Raspberry Pi
+
+I developed a **fully autonomous robot** using a Raspberry Pi, integrating multiple technologies for both control and interaction:
+
+- Built with **Flask** to serve a **live video stream** from an onboard camera
+- Accepts user input in the form of questions and responds using **prompt-based logic**
+- The responses are converted to speech using a **text-to-speech (TTS)** engine and played in real time
+- The robot operates independently, capable of autonomous movement, while being accessible through the local network
+
+### 🔧 Technologies Used
+
+- `Python`
+- `Flask`
+- `React`
+- `OpenCV` (for camera handling)
+- `Raspberry Pi OS`
+- `Socket` / `HTTP` communication
+
+This project merges hardware and software into a practical, interactive system, bridging web, AI prompting, and embedded robotics.
+
+
+## 🤝 Team Projects (Linux)
+
+### 🛡️ Advanced Backup Menu (Linux)
+- Team-built project, a complex script for automated backup
+- Includes options for incremental, differential, and restore
+- Runs on Linux using bash commands and interactive dialogs
+
+### 💻 Custom Shell (Linux)
+- Built from scratch, similar to Bash
+- Supports built-in commands, external execution, redirection, and pipes
+- Goal: understanding processes, exec system calls, and command parsing in Linux
+
+---
+
+## 🧠 Interests and Exploration
+
+- 🛡️ **Cybersecurity** – binary exploitation, reverse engineering, PWN
+- 🌐 **Networking** – interested in TCP/IP, ARP, OSI model, routing & switching
+- 🔍 **Low-level & Debugging** – ELF files, GDB, strace, Wireshark, packet analysis
+
+---
+
+## 🛠️ Technologies Used
+
+- Languages: `SQL`, `C++`, `Java`, `Bash`, `Python`, `HTML`, `CSS`, `JavaScript`, `PHP`
+- Databases: `SQLite` (separate files for different projects)
+- Operating Systems: `Linux`, `Windows`
+- Tools: `SQLiteStudio`, `Code::Blocks`, `Java Eclipse`, `VS Code`, `Wireshark`, `Ghidra`, `pwntools`, `IDA`
 
 ---
 
 ## 📫 Contact
 
-- GitHub: [github.com/AlexandruFarcas28](https://github.com/AlexandruFarcas28)
+- GitHub: [github.com/AlexandruFarcas28](https://github.com/AlexandruFarcas28)  
 - 📧 Email: farcasalex78@yahoo.com  
-          alexandru.farcas04@e-uvt.ro
+          alexandru.farcas04@e-uvt.ro  
 - 💼 LinkedIn: [linkedin.com/in/alexandru-farcas-053882334](https://www.linkedin.com/in/alexandru-farcas-053882334/)
-
----
-
