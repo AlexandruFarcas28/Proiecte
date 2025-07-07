@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Tip Calculator Pro</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      margin: 0;
+      padding: 40px 10px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+    .container {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .input-group {
+      margin-bottom: 15px;
+    }
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 5px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    .currency-row {
+      display: flex;
+      gap: 10px;
+      align-items: end;
+    }
+    .currency-row .input-group {
+      flex: 1;
+      margin-bottom: 0;
+    }
+    .exchange-rate {
+      font-size: 12px;
+      color: #666;
+      margin-top: 5px;
+    }
+    .loading {
+      color: #667eea;
+      font-style: italic;
+    }
+    .service-quality {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .quality-btn {
+      flex: 1;
+      min-width: 100px;
+      padding: 10px;
+      text-align: center;
+      border-radius: 8px;
+      border: 2px solid #e1e5e9;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .quality-btn:hover {
+      border-color: #667eea;
+      background: #f8f9ff;
+    }
+    .quality-btn.active {
+      background-color: #667eea;
+      color: white;
+      border-color: #667eea;
+    }
+    .btn {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: transform 0.2s ease;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+    .calculate-btn {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+    }
+    .reset-btn {
+      background: #f1f1f1;
+      color: #444;
+      border: none;
+    }
+    .results, .history {
+      margin-top: 25px;
+      padding: 15px;
+      background: #f8f9ff;
+      border-radius: 15px;
+      border-left: 5px solid #667eea;
+    }
+    .results div, .history-item {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    .conversion-info {
+      background: #fff3cd;
+      padding: 10px;
+      border-radius: 8px;
+      border-left: 4px solid #ffc107;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    .history-item {
+      border-bottom: 1px dashed #ccc;
+      padding-bottom: 5px;
+    }
+    .history h3 {
+      margin-bottom: 10px;
+    }
+    .clear-history {
+      background: #dc3545;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 12px;
+      cursor: pointer;
+      float: right;
+    }
+    .error {
+      color: #dc3545;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    .refresh-btn {
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 12px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+    .last-update {
+      font-size: 11px;
+      color: #888;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💰 Smart Tip Calculator Pro</h1>
+
+    <div class="currency-row">
+      <div class="input-group">
+        <label for="baseCurrency">From Currency</label>
+        <select id="baseCurrency">
+          <option value="RON">RON (lei)</option>
+          <option value="USD">USD ($)</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="GBP">GBP (£)</option>
+          <option value="CHF">CHF</option>
+          <option value="JPY">JPY (¥)</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="targetCurrency">To Currency</label>
+        <select id="targetCurrency">
+          <option value="USD">USD ($)</option>
+          <option value="RON">RON (lei)</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="GBP">GBP (£)</option>
+          <option value="CHF">CHF</option>
+          <option value="JPY">JPY (¥)</option>
+        </select>
+      </div>
+    </div>
+    <div class="exchange-rate" id="exchangeRate">
+      Loading exchange rates...
+      <button class="refresh-btn" onclick="loadExchangeRates()">🔄 Refresh</button>
+    </div>
+
+    <div class="input-group">
+      <label for="billAmount">Bill Amount</label>
+      <input type="number" id="billAmount" placeholder="e.g. 100.00" step="0.01" />
+    </div>
+
+    <div class="input-group">
+      <label>Service Quality</label>
+      <div class="service-quality">
+        <div class="quality-btn" data-tip="10">Poor 10%</div>
+        <div class="quality-btn" data-tip="15">Fair 15%</div>
+        <div class="quality-btn active" data-tip="18">Good 18%</div>
+        <div class="quality-btn" data-tip="20">Great 20%</div>
+        <div class="quality-btn" data-tip="25">Outstanding 25%</div>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label for="customTip">Or Custom Tip %</label>
+      <input type="number" id="customTip" placeholder="Custom tip % (optional)" min="0" max="100" />
+    </div>
+
+    <div class="input-group">
+      <label for="split">Split Between</label>
+      <select id="split">
+        <option value="1">Just me</option>
+        <option value="2">2 people</option>
+        <option value="3">3 people</option>
+        <option value="4">4 people</option>
+        <option value="5">5 people</option>
+        <option value="6">6 people</option>
+        <option value="8">8 people</option>
+        <option value="10">10 people</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label for="note">Note (optional)</label>
+      <textarea id="note" rows="2" placeholder="e.g. Dinner with friends"></textarea>
+    </div>
+
+    <button class="btn calculate-btn" onclick="calculateTip()">Calculate Tip</button>
+    <button class="btn reset-btn" onclick="resetForm()">Reset</button>
+
+    <div class="results" id="results" style="display: none;"></div>
+    <div class="history" id="history"></div>
+  </div>
+
+  <script>
+    let selectedTip = 18;
+    let currentExchangeRate = 1;
+    let lastUpdateTime = null;
+    
+    // API backend URL - adjust if needed
+    const API_URL = 'http://localhost:5000';
+
+    // Currency symbols mapping
+    const currencySymbols = {
+      'USD': '$',
+      'EUR': '€',
+      'GBP': '£',
+      'RON': 'lei',
+      'CHF': 'CHF',
+      'JPY': '¥'
+    };
+
+    // Load exchange rates from backend API
+    async function loadExchangeRates() {
+      const rateDisplay = document.getElementById('exchangeRate');
+      rateDisplay.innerHTML = '<span class="loading">Loading exchange rates...</span>';
+      
+      try {
+        // Get rate from backend
+        const baseCurrency = document.getElementById('baseCurrency').value;
+        const targetCurrency = document.getElementById('targetCurrency').value;
+        
+        const response = await fetch(`${API_URL}/api/exchange-rate/${baseCurrency}/${targetCurrency}`);
+        
+        if (response.ok) {
+          const data = await response.json();
+          if (data.success) {
+            currentExchangeRate = data.rate;
+            lastUpdateTime = new Date();
+            updateExchangeRateDisplay();
+          } else {
+            throw new Error(data.error || 'Failed to get exchange rate');
+          }
+        } else {
+          throw new Error('Failed to fetch exchange rates');
+        }
+        
+      } catch (error) {
+        console.error('Error loading exchange rates:', error);
+        rateDisplay.innerHTML = '<span class="error">Unable to load exchange rates. Please check backend connection.</span>';
+        currentExchangeRate = 1;
+      }
+    }
+
+    function updateExchangeRateDisplay() {
+      const baseCurrency = document.getElementById('baseCurrency').value;
+      const targetCurrency = document.getElementById('targetCurrency').value;
+      const rateDisplay = document.getElementById('exchangeRate');
+      
+      if (baseCurrency === targetCurrency) {
+        rateDisplay.innerHTML = 'Same currency selected <button class="refresh-btn" onclick="loadExchangeRates()">🔄 Refresh</button>';
+        currentExchangeRate = 1;
+        return;
+      }
+      
+      // Display the rate correctly
+      let displayText = '';
+      if (currentExchangeRate < 1) {
+        // For rates < 1, show the inverse for better readability
+        const inverseRate = 1 / currentExchangeRate;
+        displayText = `1 ${targetCurrency} = ${inverseRate.toFixed(4)} ${baseCurrency}`;
+      } else {
+        displayText = `1 ${baseCurrency} = ${currentExchangeRate.toFixed(4)} ${targetCurrency}`;
+      }
+      
+      let html = displayText;
+      html += ' <button class="refresh-btn" onclick="loadExchangeRates()">🔄 Refresh</button>';
+      
+      if (lastUpdateTime) {
+        const timeAgo = Math.floor((new Date() - lastUpdateTime) / 1000);
+        if (timeAgo < 60) {
+          html += `<div class="last-update">Updated just now</div>`;
+        } else {
+          html += `<div class="last-update">Updated ${Math.floor(timeAgo / 60)} minutes ago</div>`;
+        }
+      }
+      
+      rateDisplay.innerHTML = html;
+    }
+
+    // Event listeners
+    document.getElementById('baseCurrency').addEventListener('change', loadExchangeRates);
+    document.getElementById('targetCurrency').addEventListener('change', loadExchangeRates);
+
+    document.querySelectorAll('.quality-btn').forEach(btn => {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.quality-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        selectedTip = parseFloat(this.dataset.tip);
+        document.getElementById('customTip').value = '';
+      });
+    });
+
+    document.getElementById('customTip').addEventListener('input', function () {
+      if (this.value) {
+        document.querySelectorAll('.quality-btn').forEach(b => b.classList.remove('active'));
+        selectedTip = parseFloat(this.value) || 0;
+      }
+    });
+
+    async function calculateTip() {
+      const bill = parseFloat(document.getElementById('billAmount').value);
+      const baseCurrency = document.getElementById('baseCurrency').value;
+      const targetCurrency = document.getElementById('targetCurrency').value;
+      const split = parseInt(document.getElementById('split').value);
+      const note = document.getElementById('note').value.trim();
+
+      if (!bill || bill <= 0) {
+        alert('Please enter a valid bill amount.');
+        return;
+      }
+
+      const tipPercent = selectedTip;
+      
+      // Call backend API for calculation
+      try {
+        const response = await fetch(`${API_URL}/api/calculate-tip`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            bill_amount: bill,
+            tip_percent: tipPercent,
+            base_currency: baseCurrency,
+            target_currency: targetCurrency,
+            split_count: split,
+            note: note,
+            user_id: 'web-user' // You can implement proper user identification
+          })
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          if (data.success) {
+            displayResults(data, baseCurrency, targetCurrency, split);
+            saveToLocalHistory(bill, tipPercent, split, data.converted.total, baseCurrency, targetCurrency, note, data.exchange_rate);
+          } else {
+            alert('Error calculating tip: ' + (data.error || 'Unknown error'));
+          }
+        } else {
+          // Fallback to local calculation if API fails
+          calculateLocally(bill, tipPercent, baseCurrency, targetCurrency, split, note);
+        }
+      } catch (error) {
+        console.error('API error:', error);
+        // Fallback to local calculation
+        calculateLocally(bill, tipPercent, baseCurrency, targetCurrency, split, note);
+      }
+    }
+
+    function calculateLocally(bill, tipPercent, baseCurrency, targetCurrency, split, note) {
+      const tip = bill * tipPercent / 100;
+      const total = bill + tip;
+      
+      const convertedBill = bill * currentExchangeRate;
+      const convertedTip = tip * currentExchangeRate;
+      const convertedTotal = total * currentExchangeRate;
+      
+      const data = {
+        original: { bill, tip, total, currency: baseCurrency },
+        converted: { bill: convertedBill, tip: convertedTip, total: convertedTotal, currency: targetCurrency },
+        per_person: { 
+          bill: convertedBill / split, 
+          tip: convertedTip / split, 
+          total: convertedTotal / split 
+        },
+        exchange_rate: currentExchangeRate,
+        split_count: split
+      };
+      
+      displayResults(data, baseCurrency, targetCurrency, split);
+      saveToLocalHistory(bill, tipPercent, split, convertedTotal, baseCurrency, targetCurrency, note, currentExchangeRate);
+    }
+
+    function displayResults(data, baseCurrency, targetCurrency, split) {
+      const baseSymbol = currencySymbols[baseCurrency];
+      const targetSymbol = currencySymbols[targetCurrency];
+      
+      let resultsHTML = `
+        <div><strong>Original (${baseCurrency}):</strong></div>
+        <div>Bill: ${data.original.bill.toFixed(2)} ${baseSymbol}</div>
+        <div>Tip: ${data.original.tip.toFixed(2)} ${baseSymbol}</div>
+        <div><strong>Total: ${data.original.total.toFixed(2)} ${baseSymbol}</strong></div>
+      `;
+      
+      if (baseCurrency !== targetCurrency) {
+        resultsHTML += `
+          <div class="conversion-info">
+            <div><strong>Converted (${targetCurrency}):</strong></div>
+            <div>Bill: ${data.converted.bill.toFixed(2)} ${targetSymbol}</div>
+            <div>Tip: ${data.converted.tip.toFixed(2)} ${targetSymbol}</div>
+            <div><strong>Total: ${data.converted.total.toFixed(2)} ${targetSymbol}</strong></div>
+            <div style="font-size: 12px; margin-top: 5px;">Exchange rate: 1 ${baseCurrency} = ${data.exchange_rate.toFixed(4)} ${targetCurrency}</div>
+          </div>
+        `;
+      }
+      
+      if (split > 1) {
+        resultsHTML += `
+          <div style="margin-top: 15px;"><strong>Split ${split} ways:</strong></div>
+          <div>Bill per person: ${data.per_person.bill.toFixed(2)} ${targetSymbol}</div>
+          <div>Tip per person: ${data.per_person.tip.toFixed(2)} ${targetSymbol}</div>
+          <div><strong>Total per person: ${data.per_person.total.toFixed(2)} ${targetSymbol}</strong></div>
+        `;
+      }
+
+      document.getElementById('results').innerHTML = resultsHTML;
+      document.getElementById('results').style.display = 'block';
+    }
+
+    function saveToLocalHistory(bill, tipPercent, split, total, baseCurrency, targetCurrency, note, exchangeRate) {
+      const timestamp = new Date().toLocaleString();
+      const history = JSON.parse(localStorage.getItem('tipHistory')) || [];
+      history.unshift({
+        bill, tipPercent, split, total, 
+        baseCurrency, targetCurrency, note, timestamp, exchangeRate
+      });
+      localStorage.setItem('tipHistory', JSON.stringify(history.slice(0, 15)));
+      loadHistory();
+    }
+
+    function resetForm() {
+      document.getElementById('billAmount').value = '';
+      document.getElementById('customTip').value = '';
+      document.getElementById('split').value = '1';
+      document.getElementById('note').value = '';
+      selectedTip = 18;
+      document.querySelectorAll('.quality-btn').forEach(b => b.classList.remove('active'));
+      document.querySelector('[data-tip="18"]').classList.add('active');
+      document.getElementById('results').style.display = 'none';
+    }
+
+    function clearHistory() {
+      localStorage.removeItem('tipHistory');
+      loadHistory();
+    }
+
+    function loadHistory() {
+      const history = JSON.parse(localStorage.getItem('tipHistory')) || [];
+      const container = document.getElementById('history');
+      
+      if (history.length === 0) {
+        container.innerHTML = '<h3>🕒 History</h3><p>No calculations yet.</p>';
+        return;
+      }
+      
+      container.innerHTML = `
+        <h3>🕒 History <button class="clear-history" onclick="clearHistory()">Clear</button></h3>
+        ${history.map(entry => `
+          <div class="history-item">
+            <div><strong>${entry.bill.toFixed(2)} ${entry.baseCurrency}</strong> + ${entry.tipPercent}% tip → <strong>${entry.total.toFixed(2)} ${currencySymbols[entry.targetCurrency]}</strong></div>
+            <div>Split: ${entry.split} people${entry.note ? `, Note: ${entry.note}` : ''}</div>
+            <div style="font-size: 13px; color: #555;">${entry.timestamp}</div>
+          </div>
+        `).join('')}
+      `;
+    }
+
+    // Initialize
+    loadExchangeRates();
+    loadHistory();
+    
+    // Refresh rates every 5 minutes
+    setInterval(loadExchangeRates, 5 * 60 * 1000);
+  </script>
+</body>
+</html>
