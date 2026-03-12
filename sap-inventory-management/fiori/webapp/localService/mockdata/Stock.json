@@ -1,0 +1,7 @@
+[
+  {"StockId":"ST001","MaterialId":"MAT-LAPTOP-001","Plant":"1000","StorageLocation":"0001","StockType":"UN","Quantity":42,"BaseUom":"EA","StockStatus":"S","LastCountedAt":"2025-01-15T10:00:00Z"},
+  {"StockId":"ST002","MaterialId":"MAT-MOUSE-002","Plant":"1000","StorageLocation":"0001","StockType":"UN","Quantity":8,"BaseUom":"EA","StockStatus":"S","LastCountedAt":"2025-01-10T09:00:00Z"},
+  {"StockId":"ST003","MaterialId":"MAT-CABLE-003","Plant":"1000","StorageLocation":"0002","StockType":"QI","Quantity":0,"BaseUom":"EA","StockStatus":"E","LastCountedAt":"2025-01-01T08:00:00Z"},
+  {"StockId":"ST004","MaterialId":"MAT-MONITOR-004","Plant":"2000","StorageLocation":"0001","StockType":"UN","Quantity":15,"BaseUom":"EA","StockStatus":"S","LastCountedAt":"2025-02-01T11:00:00Z"},
+  {"StockId":"ST005","MaterialId":"MAT-KEYBOARD-005","Plant":"2000","StorageLocation":"0002","StockType":"BL","Quantity":3,"BaseUom":"EA","StockStatus":"S","LastCountedAt":"2025-02-05T14:00:00Z"}
+]

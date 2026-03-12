@@ -1,0 +1,6 @@
+[
+  {"MovementId":"MV001","MaterialId":"MAT-LAPTOP-001","MovementType":"101","MovementDate":"2025-03-01","Quantity":50,"ReferenceDoc":"PO4500001234","PostedBy":"IOANAM","Notes":"Initial stock receipt"},
+  {"MovementId":"MV002","MaterialId":"MAT-LAPTOP-001","MovementType":"201","MovementDate":"2025-03-05","Quantity":8,"ReferenceDoc":"SO5000009876","PostedBy":"POPESCUD","Notes":"Issued for project DELTA"},
+  {"MovementId":"MV003","MaterialId":"MAT-MOUSE-002","MovementType":"101","MovementDate":"2025-03-08","Quantity":10,"ReferenceDoc":"PO4500001235","PostedBy":"IOANAM","Notes":"Mice batch receipt"},
+  {"MovementId":"MV004","MaterialId":"MAT-MOUSE-002","MovementType":"201","MovementDate":"2025-03-10","Quantity":2,"ReferenceDoc":"CC100001","PostedBy":"GEORGEB","Notes":"IT department issue"}
+]
