@@ -1,4 +1,0 @@
-Nume produs:Pepsi
-Pret produs:12
-Cantitate produs cumparat:12
-Pret total:144
